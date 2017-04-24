@@ -7,9 +7,9 @@
     struct stack_element *prev;
   };
   struct _stack{
-    int element_size;
-    struct stack_element *top;
-    void *buffer;
+    int element_size; //размер элемента стека
+    struct stack_element *top; //указатель на вершину стека
+    void *buffer; //значение последнего вытолкнутого элемента
   };
   typedef struct _stack *stack;
 
