@@ -92,7 +92,7 @@ void delete_stack(stack _stack){
   return;
 };
 
-//Вывод стека
+//Вывод стека с помощью указателей на функции
 void print_stack(stack _stack, void (*print_head)(), void (*print_body)(void *_element), void (*print_foot)())
 {
   struct stack_element *buf;
