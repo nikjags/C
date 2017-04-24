@@ -3,23 +3,23 @@
 #include <memory.h>
 #include "stack.h"
 
-
+//Функции вывода стека
 void Print_head(){
   printf("Stack: \n");
   return;
 };
-
+//
 void Print_body_int(void *_element){
   printf("|%10d|\n",*((int*)_element));
   return;
 };
-
+//
 void Print_foot(){
   printf("Конец стека.\n\n");
   return;
 };
 
-
+//И даже для символов
 void Print_body_char(void *_element)
 {
   printf("|%c|\n",*((char*)_element));
