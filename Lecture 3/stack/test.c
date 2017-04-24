@@ -38,7 +38,7 @@ int main(){
 
   
   _element_size=sizeof(int);
-  printf("\размер элемента: %d байт\n",_element_size);
+  printf("Размер элемента: %d байт\n",_element_size);
   
   if(st=create_stack( _element_size)){
     printf("Стек создан.\n\n");
