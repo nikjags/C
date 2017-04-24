@@ -52,7 +52,7 @@ int push(stack _stack, void *_element){
   }
   
   buf->prev = _stack->top;
-  memcpy(buf->element, _element, _stack->element_size);
+  memcpy(buf->element, _element, _stack->element_size); //без memcpy вставка значения _element в buf->element невозможна.
   _stack->top = buf;
   return 0;
   }
