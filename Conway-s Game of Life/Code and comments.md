@@ -168,7 +168,7 @@ int main ()
 
 Первое поколение будет выглядеть так:
 
-![](Pictures/begin.jpg)
+![dsa](https://raw.githubusercontent.com/nikjags/C/master/Conway-s%20Game%20of%20Life/Pictures/begin.jpg)
 
 Конец эволюции выглядит так:
 
