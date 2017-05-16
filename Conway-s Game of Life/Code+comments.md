@@ -173,7 +173,7 @@ int main ()
 
 Конец эволюции выглядит так:
 
-![](Pictures/end.jpg)
+![](Pictures/end.jpg)  
 
 # Задание
 
