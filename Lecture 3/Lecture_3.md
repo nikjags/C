@@ -14,8 +14,7 @@
 
 В языке C существует способ построения сложных типов данных путем объединения уже существующих типов в структуры. Описание структуры имеет вид:
 ```C
-struct имя_типа_структуры
-{
+struct имя_типа_структуры {
   тип_данных имя_поля_структуры;
   тип_данных имя_поля_структуры;
   ...
@@ -34,8 +33,7 @@ struct имя_типа_структуры имя_переменной;
 
 Примеры.
 ```C
-struct records
-{
+struct records {
   char group[20];
   char name[31];
   int min, sec; // group,name,min,sec - названия полей структуры
@@ -50,15 +48,13 @@ int main()
 Можно объединить описание структуры с описанием переменной:
 
 ```C
-struct имя_типа_структуры
-{
+struct имя_типа_структуры {
 ...
 } имя_переменной1, имя_переменной2, ...;
 ```
 Если структура используется для описания только нескольких переменных в одном месте программы, то можно опустить имя_типа_структуры:
 ```C
-struct
-{
+struct {
 ...
 } имя_переменной1, имя_переменной2, ...;
 ```
@@ -72,8 +68,7 @@ struct
 
 Пример.
 ```C
-struct disc
-{
+struct disc {
   char name; //поле структуры с именем name
   int year;
 };
@@ -95,14 +90,14 @@ int main()
 
 Пример.
 ```C
-struct records
-{
+struct records {
   char group[30];
   char name[80];
   int min, sec;
 };
 
-int main() {
+int main()
+{
   struct b1, b2;
   strcpy( b1.group, "Pink Floyd" );
   strcpy( b1.name, "The Dark Side Of The Moon");
@@ -120,8 +115,7 @@ int main() {
 Пример.
 
 ```C
-struct
-{
+struct {
   int i;
   float x;
   char s[ 4 ];
@@ -147,14 +141,14 @@ p -> имя_поля
 Пример.
 
 ```C
-struct xcoord
-{
+struct xcoord {
   int x, y;
   char attr, color;
 };
 
 
-void fun( struct xcoord * st ) { //передаем в функцию указатель st на структуру xcoord
+void fun( struct xcoord * st ) //передаем в функцию указатель st на структуру xcoord
+{
   struct xccord st1, st2;
 
   st->x = 12; //обращению к полю x структуры xcoord через указатель st
@@ -178,8 +172,7 @@ struct time
   int min, sec;
 };
 
-struct records
-{
+struct records {
   struct time t; //вложенная структура time
   char group[20];
   char name[80];
@@ -209,8 +202,7 @@ struct records audio[30];
 
 int i;
 
-for(i=0; i<30; i++)
-{
+for(i=0; i<30; i++) {
   gets(audio[i].group);
   gets(audio[i].name);
   scanf("%d %d", &(audio[i].min), &(audio[i].sec));
@@ -228,8 +220,7 @@ for(i=0; i<30; i++)
 
 Пример.
 ```C
-union ttt
-{
+union ttt {
   int digit;
   double bigfl;
   char letter;
@@ -329,8 +320,7 @@ void read_line( void )
   char str[ MAX_STR ];
   int i;
 
-  for( i = 0; gets( str ); i++ )
-  {
+  for( i = 0; gets( str ); i++ ) {
     get_key( str, Key );
     /* Обработка строки Key */
     .....................
@@ -442,7 +432,8 @@ int main()
   int * iptr;
   ...
   iptr = (int *)malloc(2);
-  if(iptr == NULL) printf("No memory !\n");
+  if(iptr == NULL)
+    printf("No memory !\n");
   ...
 }
 ```
@@ -477,8 +468,7 @@ int main()
   if(iptr == NULL)
     printf("No memory !\n");
   else
-    for(i = 0; i<10; i++)
-    {
+    for(i = 0; i<10; i++) {
       *(iptr+i) = i;
     }
   ...
@@ -514,10 +504,11 @@ int * iptr;
 int i;
 ...
 iptr = (int *)calloc(10, 2);
-if(iptr == NULL) printf("No memory !\n");
+if(iptr == NULL)
+  printf("No memory !\n");
 else
-for(i = 0; i<10; i++)
-*(iptr+i) = i;
+  for(i = 0; i<10; i++)
+    *(iptr+i) = i;
 ...
 free(iptr);
 ...
@@ -537,8 +528,7 @@ free(iptr);
 #include <stdio.h>
 #include <stdlib.h>
 
-struct s
-{
+struct s {
   int info;
   struct s * ptr; //указатель на структуру s.
 };
@@ -565,8 +555,7 @@ main()
 */
   scanf("%d", &k);
   while(k>0) {
-    if(!(tmp1 = (struct s *)malloc(sizeof(struct s))))
-    {
+    if(!(tmp1 = (struct s *)malloc(sizeof(struct s)))) {
       printf("No memory...\n");
       break;
     }
@@ -586,8 +575,7 @@ main()
 6) Переходим к п. 1);
 7) Конец.
 */
-  while(tmp2)
-  {
+  while(tmp2) {
     printf("info = %d\n", tmp2->info);
     tmp1 = tmp2->ptr;
     free(tmp2);
@@ -614,8 +602,7 @@ main()
 Структура, описывающая целочисленный элемент стека, может выглядеть так:
 
 ```C
-struct stack
-{
+struct stack {
     int element; //значение элемента
     struct stack *prev; //указатель на предыдущий элемент (структуру)
 };
